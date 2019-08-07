@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <div class="header d-flex justify-content-between align-items-center">
+      <h1><%= link_to 'Simple Airbnb', flats_path %></h1>
+
+      <div class="d-flex justify-content-center">
+        <%= form_tag(flats_path, method: :get) do %>
+          <%= text_field_tag(:query, params[:query]) %>
+          <%= submit_tag('Search') %>
+        <% end %>
+        <%= link_to 'Add Flat', new_flat_path %>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>

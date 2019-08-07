@@ -1,0 +1,40 @@
+<div class="flat-header">
+  <h2><%= @flat.name %></h2>
+  <p><%= @flat.address %></p>
+</div>
+
+<div class="container d-flex">
+  <div class="flat-info">
+    <div class="flat-description">
+      <h3>A bit more about this flat...</h3>
+      <p><%= @flat.description %></p>
+      <img src=<%= @flat.image %> alt="#">
+    </div>
+
+    <div class="flat-details">
+      <h3>Details</h3>
+      <div class="d-flex">
+        <i class="fas fa-user-friends"></i>
+        <p><%= @flat.number_of_guests %></p>
+        <i class="fas fa-euro-sign"></i>
+        <p><%= @flat.price_per_night %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="booking-and-sharing">
+    <div class="booking-form">
+      <h3>Book this place!</h3>
+    </div>
+
+    <div class="footer">
+      <h4>Share</h4>
+      <div class="d-flex">
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-twitter-square"></i>
+        <i class="fab fa-pinterest-square"></i>
+        <i class="fas fa-envelope-square"></i>
+      </div>
+    </div>
+  </div>
+</div>

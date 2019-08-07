@@ -2,23 +2,25 @@
   <h2>No flats found :(</h2>
 <% else %>
   <h2>All our Flats (<%= @flats.length %>)</h2>
-  <% @flats.each do |flat| %>
-    <div class="flat-card">
-      <h3><%= flat.name %></h3>
-      <p><%= flat.address %></p>
-      <div class="flat-details d-flex">
-        <i class="fas fa-user-friends"></i>
-        <p><%= flat.number_of_guests %></p>
-        <i class="fas fa-euro-sign"></i>
-        <p><%= flat.price_per_night %></p>
+  <div class="flats d-flex">
+    <% @flats.each do |flat| %>
+      <div class="flat-card">
+        <h3><%= flat.name %></h3>
+        <p><%= flat.address %></p>
+        <div class="flat-details d-flex">
+          <i class="fas fa-user-friends"></i>
+          <p><%= flat.number_of_guests %></p>
+          <i class="fas fa-euro-sign"></i>
+          <p><%= flat.price_per_night %></p>
+        </div>
+        <div class="flat-link">
+          <%= link_to 'More info', flat_path(flat) %>
+          <%= link_to 'Edit', edit_flat_path(flat) %>
+          <%= link_to 'Delete', flat_path(flat),
+              method: :delete,
+              data: { confirm: 'Are you sure you want to delete this listing?' } %>
+        </div>
       </div>
-      <div class="flat-link">
-        <%= link_to 'More info', flat_path(flat) %>
-        <%= link_to 'Edit', edit_flat_path(flat) %>
-        <%= link_to 'Delete', flat_path(flat),
-            method: :delete,
-            data: { confirm: 'Are you sure you want to delete this listing?' } %>
-      </div>
-    </div>
-<% end %>
+    <% end %>
+  </div>
 <% end %>
